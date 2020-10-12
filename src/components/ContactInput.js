@@ -18,7 +18,7 @@ class ContactInput extends Component {
     }
 
     handleSubmit(event){
-        const target = event.target;
+        event.preventDefault();
 
     }
 

@@ -17,8 +17,10 @@ class EducationInput extends Component {
         this.props.onTextFieldChange(event);
     }
 
-    handleSubmit(){
+    handleSubmit(event){
         //this.props.onSubmit(event);
+        event.preventDefault();
+        
         if(this.state.isActive === true){
             this.setState({isActive: false})
         }

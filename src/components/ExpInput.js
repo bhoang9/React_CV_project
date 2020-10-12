@@ -7,6 +7,10 @@ class ExpInput extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.state = {
+            isActive: true
+        };
     }
 
     handleChange(event){
@@ -14,7 +18,15 @@ class ExpInput extends Component {
     }
 
     handleSubmit(event){
-        this.props.onSubmit(event);
+        //this.props.onSubmit(event);
+        event.preventDefault();
+
+        if(this.state.isActive === true){
+            this.setState({isActive: false})
+        }
+        else{
+            this.setState({isActive: true})
+        }
     }
 
     render(){
@@ -24,16 +36,21 @@ class ExpInput extends Component {
                     <p>Enter Professional Experience</p>
                     <br/>
                 </div>
-
-                <form onSubmit={this.handleSubmit}>
+                {this.state.isActive ? (
+                    <form onSubmit={this.handleSubmit}>
                     <textarea
                         name="experience"
                         onChange={this.handleChange}>
                     </textarea>
-                </form>
+                    </form>
+                ): (
+                    <button>Edit</button>
+                )}
+
                 <div id="buttonsDiv">
-                            <button>Edit</button>
-                            <button type="submit">Submit</button>
+                    <button 
+                        type="submit"
+                        onClick={this.handleSubmit}>Submit</button>
                 </div>
             </div>
 
