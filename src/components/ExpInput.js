@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SubmitButton from "./SubmitButton";
 
 class ExpInput extends Component {
     
@@ -18,7 +19,6 @@ class ExpInput extends Component {
     }
 
     handleSubmit(event){
-        //this.props.onSubmit(event);
         event.preventDefault();
 
         if(this.state.isActive === true){
@@ -32,26 +32,34 @@ class ExpInput extends Component {
     render(){
         return(
             <div className="ExpInputMain">
-                <div className="Header">
-                    <p>Enter Professional Experience</p>
+                <div className="header">
+                    <p>Professional Experience</p>
                     <br/>
                 </div>
                 {this.state.isActive ? (
-                    <form onSubmit={this.handleSubmit}>
-                    <textarea
-                        name="experience"
-                        onChange={this.handleChange}>
-                    </textarea>
-                    </form>
+                    <div id="expInputDiv">
+                        <form onSubmit={this.handleSubmit}>
+                        <textarea
+                            id="expTextArea"
+                            name="experience"
+                            onChange={this.handleChange}>
+                        </textarea>
+                        <br/>
+                        <SubmitButton
+                            buttonName="Submit"
+                            onSubmit={this.handleSubmit}
+                            />
+                        </form>
+                    </div>
                 ): (
-                    <button>Edit</button>
+                    <div id="expDisplayDiv">
+                        <p>{this.props.expText}</p>
+                        <SubmitButton 
+                            buttonName="Edit"
+                            handleSubmit={this.handleSubmit} />
+                    </div>
                 )}
 
-                <div id="buttonsDiv">
-                    <button 
-                        type="submit"
-                        onClick={this.handleSubmit}>Submit</button>
-                </div>
             </div>
 
         )

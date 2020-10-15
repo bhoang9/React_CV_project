@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SubmitButton from "./SubmitButton";
 
 class EducationInput extends Component {
     
@@ -18,7 +19,6 @@ class EducationInput extends Component {
     }
 
     handleSubmit(event){
-        //this.props.onSubmit(event);
         event.preventDefault();
         
         if(this.state.isActive === true){
@@ -31,35 +31,44 @@ class EducationInput extends Component {
 
     render(){
         return(
-            <div className="EducationInputMain">
-                <div className="Header">
-                    <p>Enter Education</p>
+            <div className="EducationInput">
+                <div className="header">
+                    <p>Education</p>
                 </div>
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        name="schoolName"
-                        placeholder="Name of School"
-                        onChange={this.handleChange}>
-                    </input>
-
-                    <label>Year of Graduation</label>
-
-                    <select 
-                        name="gradYear"
-                        onChange={this.handleChange}
-                        value={this.props.gradYear}>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                    </select>
-                    <div id="buttonsDiv">
-                            <button>Edit</button>
-                            <button type="submit">Submit</button>
+                {this.state.isActive ? (
+                    <form onSubmit={this.handleSubmit}>
+                    <div id="educationInputMain">
+                        <input
+                            name="schoolName"
+                            placeholder="Name of School"
+                            onChange={this.handleChange}>
+                        </input>
+                        <select 
+                            name="gradYear"
+                            onChange={this.handleChange}
+                            value={this.props.gradYear}>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                        </select>
                     </div>
-                </form>
+                    <br/>
+                    <SubmitButton 
+                        buttonName="Submit"
+                        handleSubmit={this.handleSubmit} />
+                    </form>
+                ): (
+                    <div id="educationDisplayDiv">
+                        <p>{this.props.schoolName}</p>
+                        <p>{this.props.gradYear}</p>
+                        <SubmitButton 
+                            buttonName="Edit"
+                            handleSubmit={this.handleSubmit} />
+                    </div>
+                )}
             </div>
 
         )

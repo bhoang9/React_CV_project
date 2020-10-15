@@ -1,10 +1,37 @@
 body{
     padding: 50px;
-    background-color: #66CCFF;
+    background-color: #09405c;
     font-family: sans-serif;
 }
 
 #container {
     display: flex;
     justify-content: center;
+}
+
+.header{
+    font-size: 15px;
+    color: #ffffff;
+}
+
+/*Education input*/
+#educationInputMain {
+    display: inline;
+}
+
+.button{
+    background-color: #ffffff;
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+/* Experience input */
+#expTextArea{
+    width: 300px;
+    height: 150px;
+}
+
+#contactDisplayDiv{
+    color: #ffffff
 }

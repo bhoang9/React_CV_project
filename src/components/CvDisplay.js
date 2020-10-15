@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class cvDisplay extends Component{
+class CvDisplay extends Component{
 
     constructor(props){
         super()
@@ -27,4 +27,4 @@ class cvDisplay extends Component{
     }
 }
 
-export default cvDisplay
+export default CvDisplay

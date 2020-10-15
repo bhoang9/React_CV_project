@@ -16,6 +16,7 @@ class App extends Component{
             phone: "",
             schoolName: "",
             gradYear: "",
+            experience:"",
         }
 
         this.onTextFieldChange = this.onTextFieldChange.bind(this);
@@ -46,16 +47,21 @@ class App extends Component{
             <div className="cvMain">
                 <ContactInput 
                     onTextFieldChange={this.onTextFieldChange}
-                    handleSubmit={this.onSubmit}/>
+                    nameText={this.state.name}
+                    emailText={this.state.email}
+                    phoneText={this.state.phone}
+                    />
                 <br/>
                 <EducationInput
                     onTextFieldChange={this.onTextFieldChange}
+                    schoolName={this.state.schoolName}
                     gradYear={this.state.gradYear}
                 />
                 <br />
                 <ExpInput
                     onTextFieldChange={this.onTextFieldChange}
-                    handleSubmit={this.onSubmit}/>                
+                    expText={this.state.experience}
+                    />                
             </div>
         )
     }
