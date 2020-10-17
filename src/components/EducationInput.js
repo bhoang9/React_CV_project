@@ -61,7 +61,9 @@ class EducationInput extends Component {
                         handleSubmit={this.handleSubmit} />
                     </form>
                 ): (
-                    <div id="educationDisplayDiv">
+                    <div 
+                        id="educationDisplayDiv"
+                        class="infoDisplayDiv">
                         <p>{this.props.schoolName}</p>
                         <p>{this.props.gradYear}</p>
                         <SubmitButton 

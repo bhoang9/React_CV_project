@@ -6,7 +6,11 @@ body{
 
 #container {
     display: flex;
-    justify-content: center;
+}
+
+#cvMain{
+    display:flex;
+    flex-direction: column;
 }
 
 .header{
@@ -14,9 +18,19 @@ body{
     color: #ffffff;
 }
 
+.infoDisplayDiv{
+    color: #ffffff;
+    float: left;
+}
+
 /*Education input*/
 #educationInputMain {
     display: inline;
+}
+
+.submitAllButton {
+    display:flex;
+    margin-top: 20px;
 }
 
 .button{

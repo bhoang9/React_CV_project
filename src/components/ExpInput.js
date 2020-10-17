@@ -52,7 +52,9 @@ class ExpInput extends Component {
                         </form>
                     </div>
                 ): (
-                    <div id="expDisplayDiv">
+                    <div 
+                        id="expDisplayDiv"
+                        class="infoDisplayDiv">
                         <p>{this.props.expText}</p>
                         <SubmitButton 
                             buttonName="Edit"

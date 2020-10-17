@@ -7,22 +7,35 @@ class CvDisplay extends Component{
     }
 
     getContactInfo(){
-        contactInfo = [this.props.name, this.props.email, this.props.phone]
+        var contactInfo = [this.props.name, this.props.email, this.props.phone]
         
         return contactInfo
     }
 
     
     render(){
-        var resumeInfo = this.props.entries;
-        var contactInfo = this.getContactInfo()
+        var contactInfo = this.getContactInfo();
+        var educationInfo = [this.props.schoolName, this.props.gradYear];
+        var expInfo = this.props.experience;
 
         return (
-            <ul>
-                <li>contactInfo[0]</li>
-                <li>contactInfo[1]</li>
-                <li>contactInfo[2]</li>
-            </ul>
+            <div id="cvDisplayMain">
+                <div id="displayContactDiv">
+                    <p>{contactInfo[0]}</p>
+                    <p>{contactInfo[1]}</p>
+                    <p>{contactInfo[2]}</p>
+                </div>
+
+                <div id="displayEducationDiv">
+                    <p>educationInfo[0]</p>
+                    <p>educationInfo[1]</p>
+                </div>
+
+                <div id="displayExpInfo">
+                    <p>expInfo</p>
+                </div>
+            </div>
+
         )
     }
 }

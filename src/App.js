@@ -4,11 +4,12 @@ import React, { Component } from "react";
 import ContactInput from "./components/ContactInput"
 import EducationInput from "./components/EducationInput"
 import ExpInput from "./components/ExpInput";
+import CvDisplay from "./components/CvDisplay";
 
 class App extends Component{
 
     constructor(props){
-        super(props);
+        super();
 
         this.state ={
             name: "",
@@ -17,10 +18,11 @@ class App extends Component{
             schoolName: "",
             gradYear: "",
             experience:"",
+            displayAll: false
         }
 
         this.onTextFieldChange = this.onTextFieldChange.bind(this);
-        this.onSubmit = this.onSubmit(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
 
@@ -35,16 +37,12 @@ class App extends Component{
     }
 
     onSubmit(event){
-        //Given the nature of the components, where not all of them have the
-        //same amount of inputs, will probably have to take an array as input
-        //and run thru array while rendering each value. Not sure at the moment
-        //if that is proper use, will do more research
     }
 
     render(){
         return(
             
-            <div className="cvMain">
+            <div id="cvMain">
                 <ContactInput 
                     onTextFieldChange={this.onTextFieldChange}
                     nameText={this.state.name}
@@ -61,7 +59,20 @@ class App extends Component{
                 <ExpInput
                     onTextFieldChange={this.onTextFieldChange}
                     expText={this.state.experience}
-                    />                
+                    />
+                <br />
+                <br />
+                <button 
+                    id="submitAllButton"
+                    onClick={this.onSubmit()}> Submit All </button>
+                {this.state.displayAll ? (
+                    <CvDisplay 
+                        {...this.state}
+                    />
+                ) : 
+                <br/>
+                }
+
             </div>
         )
     }

@@ -59,9 +59,7 @@ class ContactInput extends Component {
 
                 ): (
                     <div id="contactDisplayDiv">
-                        <p>{this.props.nameText}</p>
-                        <p>{this.props.emailText}</p>
-                        <p>{this.props.phoneText}</p>
+                        <p>{this.props.nameText}</p> <p>{this.props.emailText}</p> <p>{this.props.phoneText}</p>
                     <br/>
                     <SubmitButton 
                         buttonName="Edit"
