@@ -6,6 +6,7 @@ body{
 
 #container {
     display: flex;
+    justify-content: center;
 }
 
 #cvMain{
@@ -13,13 +14,20 @@ body{
     flex-direction: column;
 }
 
+.inputMain {
+    background-color: #e9e9e9;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
 .header{
-    font-size: 15px;
-    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
 }
 
 .infoDisplayDiv{
-    color: #ffffff;
+    color: #000000;
     float: left;
 }
 
@@ -34,7 +42,8 @@ body{
 }
 
 .button{
-    background-color: #ffffff;
+    color: black;
+    background-color: #888888;
     border: none;
     padding: 5px;
     margin-top: 10px;
@@ -47,5 +56,5 @@ body{
 }
 
 #contactDisplayDiv{
-    color: #ffffff
+    color: #000000;
 }

@@ -27,12 +27,12 @@ class CvDisplay extends Component{
                 </div>
 
                 <div id="displayEducationDiv">
-                    <p>educationInfo[0]</p>
-                    <p>educationInfo[1]</p>
+                    <p>{educationInfo[0]}</p>
+                    <p>{educationInfo[1]}</p>
                 </div>
 
                 <div id="displayExpInfo">
-                    <p>expInfo</p>
+                    <p>{expInfo}</p>
                 </div>
             </div>
 

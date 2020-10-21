@@ -37,6 +37,12 @@ class App extends Component{
     }
 
     onSubmit(event){
+        if(this.state.displayAll === true){
+            this.setState({displayAll: false})
+        }
+        else{
+            this.setState({displayAll: true})
+        }
     }
 
     render(){
@@ -64,7 +70,7 @@ class App extends Component{
                 <br />
                 <button 
                     id="submitAllButton"
-                    onClick={this.onSubmit()}> Submit All </button>
+                    onClick={this.onSubmit}> Submit All </button>
                 {this.state.displayAll ? (
                     <CvDisplay 
                         {...this.state}

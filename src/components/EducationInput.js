@@ -31,7 +31,9 @@ class EducationInput extends Component {
 
     render(){
         return(
-            <div className="EducationInput">
+            <div 
+                id="EducationInput"
+                className="inputMain">
                 <div className="header">
                     <p>Education</p>
                 </div>

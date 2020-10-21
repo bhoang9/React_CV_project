@@ -33,7 +33,9 @@ class ContactInput extends Component {
 
     render(){
         return(
-            <div className="ContactInputMain">
+            <div 
+                id="ContactInputMain"
+                class="inputMain">
                 <div className="header">
                     <p>Contact Info</p>
                 </div>
@@ -59,7 +61,7 @@ class ContactInput extends Component {
 
                 ): (
                     <div id="contactDisplayDiv">
-                        <p>{this.props.nameText}</p> <p>{this.props.emailText}</p> <p>{this.props.phoneText}</p>
+                        <p>{this.props.nameText} | {this.props.emailText} | {this.props.phoneText}</p>
                     <br/>
                     <SubmitButton 
                         buttonName="Edit"

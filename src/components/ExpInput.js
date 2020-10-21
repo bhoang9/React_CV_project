@@ -31,7 +31,9 @@ class ExpInput extends Component {
 
     render(){
         return(
-            <div className="ExpInputMain">
+            <div 
+                id="ExpInputMain"
+                class="inputMain">
                 <div className="header">
                     <p>Professional Experience</p>
                     <br/>
